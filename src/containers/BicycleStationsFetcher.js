@@ -4,7 +4,7 @@ import fetchBicycleStationsInfo from '../actions/fetchBicycleStationsInfo'
 
 const mapStateToProps = state => {
   return {
-    placeInfo: state.bicycleStations.placesInfo
+    placeInfo: state.bicycleStations.bicycleStationsInfo
   }
 }
 
