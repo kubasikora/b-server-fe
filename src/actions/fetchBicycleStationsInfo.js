@@ -10,5 +10,5 @@ const fetchBicycleStationsInfo = (endPointURL) => {
 			}	
 	}
 
-export default fetchBicycleStationsInfo
+export default fetchBicycleStationsInfo;
 
