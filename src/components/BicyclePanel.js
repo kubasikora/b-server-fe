@@ -3,13 +3,28 @@ import PropTypes from 'prop-types'
 import { Panel, Table } from 'react-bootstrap'
 
 const BicyclePanel = (props) => {
+
+	let bicycleInfo;
+	if (props.bicycleStationsInfo) {
+		bicycleInfo = [...props.bicycleStationsInfo];
+		let toChangeName = bicycleInfo.find(element => {
+			if (element.name == "ul. Waryńskiego-ul. Nowowiejska-Metro Politechnika") {
+				element.name = "Metro Politechnika";
+				return true;
+			}
+			else return false;
+		})
+
+	}
+	else bicycleInfo = [];
+
 	return (
 		<Panel bsStyle="info">
 			<Panel.Heading>
 				<Panel.Title>Sprawdź czy są dostępne rowery!</Panel.Title>
 			</Panel.Heading>
 			<Panel.Body>
-				<Table striped bordered condensed hover>
+				<Table striped bordered condensed hover responsive>
 					<thead>
 						<tr>
 							<th>Stacja</th>
@@ -19,12 +34,13 @@ const BicyclePanel = (props) => {
 					</thead>
 					<tbody>
 						{
-							props.bicycleStationsInfo.map(element => {
+
+							bicycleInfo.map(element => {
 								return (
 									<tr key={element.name}>
 										<td>{element.name}</td>
 										<td>{element.bikes}</td>
-										<td>{element.racks}</td>
+										<td>{element.bike_racks}</td>
 									</tr>
 								)
 							})

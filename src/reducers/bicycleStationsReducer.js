@@ -8,7 +8,7 @@ const bicycleStations = (state = initialState, action) => {
 		console.log('FETCH_BICYCLE_STATIONS_INFO_ACK');
 		return {
 			...state,
-			bicycleStationsInfo: action.payload
+			bicycleStationsInfo: action.payload.data
 			}
 		
 	case 'FETCH_BICYCLE_STATIONS_INFO_ERROR':
