@@ -3,7 +3,6 @@ import Header from './Header'
 import BicycleStationsFetcher from '../containers/BicycleStationsFetcher'
 import './App.css';
 import { Grid, Row, Col } from 'react-bootstrap'
-import axios from 'axios';
 
 class App extends Component {
 

@@ -6,12 +6,13 @@ import {Provider} from 'react-redux'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
 import fetchBicycleStationsInfo from './actions/fetchBicycleStationsInfo'
+import endPointURL from './const/api'
 
 let middlewares = [thunk];
 let appStore = createStore(rootReducer, applyMiddleware(...middlewares));
 
-appStore.dispatch(fetchBicycleStationsInfo('http://serwerpiwny-dsriviera.herokuapp.com/bicycles'));
-	
+appStore.dispatch(fetchBicycleStationsInfo(endPointURL + '/bicycles'));
+
 ReactDOM.render(
   <Provider store={appStore}>
     <App />

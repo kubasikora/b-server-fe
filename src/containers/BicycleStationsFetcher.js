@@ -1,10 +1,11 @@
 import {connect} from 'react-redux'
-import BicyclePanel from '../components/BicyclePanel'
+import BicyclePanel from '../components/BicyclePanel/BicyclePanel'
 import fetchBicycleStationsInfo from '../actions/fetchBicycleStationsInfo'
 
 const mapStateToProps = state => {
   return {
-    bicycleStationsInfo: state.bicycleStations.bicycleStationsInfo
+    bicycleStationsInfo: state.bicycleStations.bicycleStationsInfo,
+    error: state.bicycleStations.error
   }
 }
 
