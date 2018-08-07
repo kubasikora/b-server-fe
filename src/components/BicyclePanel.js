@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import Spinner from './Spinner'
 import { Panel, Table } from 'react-bootstrap'
 
 const BicyclePanel = (props) => {
 
-	let bicycleInfo;
-	if (props.bicycleStationsInfo) {
-		bicycleInfo = [...props.bicycleStationsInfo];
+	console.log(props.bicycleStationsInfo)
+	let bicycleTable;
+	if (props.bicycleStationsInfo.length !== 0) {
+		let bicycleInfo = [...props.bicycleStationsInfo];
 		let toChangeName = bicycleInfo.find(element => {
 			if (element.name == "ul. Waryńskiego-ul. Nowowiejska-Metro Politechnika") {
 				element.name = "Metro Politechnika";
@@ -14,9 +16,33 @@ const BicyclePanel = (props) => {
 			}
 			else return false;
 		})
+		bicycleTable =
+			<Table striped bordered condensed hover responsive>
+				<thead>
+					<tr>
+						<th>Stacja</th>
+						<th>Rowery</th>
+						<th>Stojaki</th>
+					</tr>
+				</thead>
 
+				<tbody>
+					{
+						bicycleInfo.map(element => {
+							return (
+								<tr key={element.name}>
+									<td>{element.name}</td>
+									<td>{element.bikes}</td>
+									<td>{element.bike_racks}</td>
+								</tr>
+							)
+						})
+					}
+				</tbody>
+			</Table>
 	}
-	else bicycleInfo = [];
+
+	else bicycleTable = <Spinner />
 
 	return (
 		<Panel bsStyle="info">
@@ -24,29 +50,7 @@ const BicyclePanel = (props) => {
 				<Panel.Title>Sprawdź czy są dostępne rowery!</Panel.Title>
 			</Panel.Heading>
 			<Panel.Body>
-				<Table striped bordered condensed hover responsive>
-					<thead>
-						<tr>
-							<th>Stacja</th>
-							<th>Rowery</th>
-							<th>Stojaki</th>
-						</tr>
-					</thead>
-					<tbody>
-						{
-
-							bicycleInfo.map(element => {
-								return (
-									<tr key={element.name}>
-										<td>{element.name}</td>
-										<td>{element.bikes}</td>
-										<td>{element.bike_racks}</td>
-									</tr>
-								)
-							})
-						}
-					</tbody>
-				</Table>
+				{bicycleTable}
 			</Panel.Body>
 		</Panel>
 	)
