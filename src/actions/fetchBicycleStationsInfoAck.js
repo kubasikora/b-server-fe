@@ -1,8 +1,8 @@
-const fetchBicycleStationsInfoAck = (dispatch, payload) => {
-	dispatch({
+const fetchBicycleStationsInfoAck = payload => {
+	return {
 		type: 'FETCH_BICYCLE_STATIONS_INFO_ACK',
-		payload: payload
-	});
+		payload
+	};
 }
 
 export default fetchBicycleStationsInfoAck;

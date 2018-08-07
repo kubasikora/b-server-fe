@@ -10,8 +10,8 @@ import fetchBicycleStationsInfo from './actions/fetchBicycleStationsInfo'
 let middlewares = [thunk];
 let appStore = createStore(rootReducer, applyMiddleware(...middlewares));
 
-appStore.dispatch(fetchBicycleStationsInfo('http://serwerpiwny-dsriviera.herokuapp.com/bicycles', {headers: {'Access-Control-Allow-Origin': '*'}}));
-		
+appStore.dispatch(fetchBicycleStationsInfo('http://serwerpiwny-dsriviera.herokuapp.com/bicycles'));
+	
 ReactDOM.render(
   <Provider store={appStore}>
     <App />

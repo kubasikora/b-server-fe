@@ -7,12 +7,6 @@ import axios from 'axios';
 
 class App extends Component {
 
-	componentDidMount(){
-		//axios.get('http://localhost:5000/bicycles').then((response) => {
-		//	console.log(response.data);
-		//});
-	}
-
 	render() {
     return (	
 			<div>

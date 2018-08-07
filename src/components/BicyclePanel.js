@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import Spinner from './Spinner'
-import { Panel, Table } from 'react-bootstrap'
+import Spinner from './Spinner/Spinner'
+import { Panel, Table, Button } from 'react-bootstrap'
+import './BicyclePanel.css'
 
 const BicyclePanel = (props) => {
 
-	console.log(props.bicycleStationsInfo)
+	const refresh = (event) => {
+		props.fetchBicycleStationsInfo('http://serwerpiwny-dsriviera.herokuapp.com/bicycles')
+	}
+	console.log(props)
 	let bicycleTable;
 	if (props.bicycleStationsInfo.length !== 0) {
 		let bicycleInfo = [...props.bicycleStationsInfo];
 		let toChangeName = bicycleInfo.find(element => {
-			if (element.name == "ul. Waryńskiego-ul. Nowowiejska-Metro Politechnika") {
+			if (element.name === "ul. Waryńskiego-ul. Nowowiejska-Metro Politechnika") {
 				element.name = "Metro Politechnika";
 				return true;
 			}
@@ -47,7 +51,7 @@ const BicyclePanel = (props) => {
 	return (
 		<Panel bsStyle="info">
 			<Panel.Heading>
-				<Panel.Title>Sprawdź czy są dostępne rowery!</Panel.Title>
+				<Panel.Title>Sprawdź czy są dostępne rowery!<Button bsStyle="primary" bsSize="small" className="refresh-button-style" onClick={refresh}>Refresh</Button></Panel.Title>
 			</Panel.Heading>
 			<Panel.Body>
 				{bicycleTable}
