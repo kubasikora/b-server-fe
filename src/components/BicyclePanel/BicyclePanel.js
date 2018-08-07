@@ -1,10 +1,11 @@
 import React from 'react';
 import Spinner from '../Spinner/Spinner'
-import { Panel, Button } from 'react-bootstrap'
+import {Glyphicon, Panel, Button } from 'react-bootstrap'
 import './BicyclePanel.css'
 import endPointURL from '../../const/api'
 import BicycleTable from './BicycleTable'
 import ErrorPanel from './ErrorPanel'
+
 
 const BicyclePanel = (props) => {
 
@@ -34,7 +35,12 @@ const BicyclePanel = (props) => {
 	return (
 		<Panel bsStyle="info">
 			<Panel.Heading>
-				<Panel.Title>Sprawdź czy są rowery!<Button bsStyle="primary" bsSize="small" className="refresh-button-style" onClick={refresh}>Refresh</Button></Panel.Title>
+				<Panel.Title>
+					Sprawdź czy są rowery!
+					<Button bsStyle="primary" bsSize="small" className="refresh-button-style" onClick={refresh}>
+						<Glyphicon glyph="refresh" />
+					</Button>
+				</Panel.Title>
 			</Panel.Heading>
 			<Panel.Body>
 				{bicyclePanelContent}

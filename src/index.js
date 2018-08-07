@@ -5,7 +5,7 @@ import {createStore, applyMiddleware} from 'redux'
 import {Provider} from 'react-redux'
 import rootReducer from './reducers'
 import thunk from 'redux-thunk'
-import fetchBicycleStationsInfo from './actions/fetchBicycleStationsInfo'
+import fetchBicycleStationsInfo from './actions/BicyclePanelActions/fetchBicycleStationsInfo'
 import endPointURL from './const/api'
 
 let middlewares = [thunk];
