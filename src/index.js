@@ -11,8 +11,6 @@ import endPointURL from './const/api'
 let middlewares = [thunk];
 let appStore = createStore(rootReducer, applyMiddleware(...middlewares));
 
-appStore.dispatch(fetchBicycleStationsInfo(endPointURL + '/bicycles'));
-
 ReactDOM.render(
   <Provider store={appStore}>
     <App />
