@@ -9,7 +9,9 @@ const NavigationBar = () => {
         <Navbar.Brand>
             <Link to="/"> Dodaj transakcje </Link>
         </Navbar.Brand>
+        <Navbar.Toggle />
       </Navbar.Header>
+      <Navbar.Collapse>
       <Nav>
         <NavItem>
           <Link to="/loaner">Dłużnicy</Link>
@@ -18,6 +20,7 @@ const NavigationBar = () => {
           <Link to="/lender">Wierzyciele</Link>
         </NavItem>
       </Nav>
+      </Navbar.Collapse>
     </Navbar>
   );
 };

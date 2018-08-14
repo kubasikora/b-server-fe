@@ -12,10 +12,10 @@ class App extends Component {
         <Header />
         <Grid fluid={true}>
           <Row>
-            <Col sm={6} md={4}>
+            <Col sm={6} md={3}>
               <BicyclePanel />
             </Col>
-            <Col sm={6} md={8}>
+            <Col sm={6} md={9}>
               <ContentPane />
             </Col>
           </Row>

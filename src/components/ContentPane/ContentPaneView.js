@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Panel } from "react-bootstrap";
 import NavigationBar from "./NavigationBar";
 import TransactionPanel from "../TransactionPanel";
+import LoanerPanel from "../LoanerPanel";
+import LenderPanel from "../LenderPanel";
 import BicyclePanelView from "../BicyclePanel/BicycylePanelView";
 
 class ContentPaneView extends React.Component {
@@ -13,21 +15,18 @@ class ContentPaneView extends React.Component {
   render() {
     return (
       <Router>
-        <div className="page-content">
+          <div>
           <NavigationBar />
+        <Panel>
+            <Panel.Body>
+          
           <Route exact path="/" component={TransactionPanel} />
-          <Route
-            exact
-            path="/loaner"
-            render={() => <h1> Hello from loaner page! </h1>}
-          />
-          <Route
-            exact
-            path="/lender"
-            render={() => <h1> Hello from lender page! </h1>}
-          />
+          <Route exact path="/loaner" component={LoanerPanel} />
+          <Route exact path="/lender" component={LenderPanel}/>
           <Redirect to="/" />
-        </div>
+          </Panel.Body>
+          </Panel>
+          </div>
       </Router>
     );
   }
