@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const NavigationBarView = props => {
   const logIn = event => {
-    event.preventDefault();
     props.showLoginPopup();
   };
 
