@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import BicyclePanel from "../components/BicyclePanel";
-import { Grid, Row, Col} from "react-bootstrap";
-import Footer from '../components/Footer';
-import ContentPane from '../components/ContentPane'
+import { Grid, Row, Col } from "react-bootstrap";
+import Footer from "../components/Footer";
+import ContentPane from "../components/ContentPane";
 
 class App extends Component {
   render() {
@@ -20,7 +20,7 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
-		<Footer />
+        <Footer />
       </div>
     );
   }

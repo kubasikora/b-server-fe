@@ -15,18 +15,17 @@ class ContentPaneView extends React.Component {
   render() {
     return (
       <Router>
-          <div>
+        <div>
           <NavigationBar />
-        <Panel>
+          <Panel>
             <Panel.Body>
-          
-          <Route exact path="/" component={TransactionPanel} />
-          <Route exact path="/loaner" component={LoanerPanel} />
-          <Route exact path="/lender" component={LenderPanel}/>
-          <Redirect to="/" />
-          </Panel.Body>
+              <Route exact path="/" component={TransactionPanel} />
+              <Route exact path="/loaner" component={LoanerPanel} />
+              <Route exact path="/lender" component={LenderPanel} />
+              <Redirect to="/" />
+            </Panel.Body>
           </Panel>
-          </div>
+        </div>
       </Router>
     );
   }
