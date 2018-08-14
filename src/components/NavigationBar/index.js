@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'
 import NavigationBarView from './NavigationBarView'
 import showLoginPopup from '../../actions/ContentPaneActions/showLoginPopup'
-import hideLoginPopup from '../../actions/ContentPaneActions/hideLoginPopup'
 
 const mapStateToProps = state => {
   return {
@@ -11,8 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    showLoginPopup: () => {dispatch(showLoginPopup())},
-    hideLoginPopup: () => {dispatch(hideLoginPopup())}
+    showLoginPopup: () => {dispatch(showLoginPopup())}
   }
 }
 

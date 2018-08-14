@@ -2,7 +2,9 @@ import {connect} from 'react-redux'
 import ContentPaneView from './ContentPaneView'
 
 const mapStateToProps = state => {
-  return {}
+  return {
+    loginPopup: state.navigationBarSettings.loginPopup
+  }
 }
 
 const mapDispatchToProps = dispatch => {

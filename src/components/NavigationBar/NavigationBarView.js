@@ -13,7 +13,7 @@ const NavigationBarView = props => {
     <Navbar>
       <Navbar.Header>
         <LinkContainer to="/">
-          <Navbar.Brand>Dodaj transakcje</Navbar.Brand>
+          <Navbar.Brand>Dodaj piwko!</Navbar.Brand>
         </LinkContainer>
         <Navbar.Toggle />
       </Navbar.Header>
