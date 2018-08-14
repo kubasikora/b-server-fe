@@ -1,5 +1,5 @@
 import React from 'react';
-import Spinner from '../Spinner/Spinner'
+import Spinner from '../Spinner'
 import { Glyphicon, Panel, Button } from 'react-bootstrap'
 import './BicyclePanel.css'
 import endPointURL from '../../const/api'
@@ -7,7 +7,7 @@ import BicycleTable from './BicycleTable'
 import ErrorPanel from './ErrorPanel'
 
 
-class BicyclePanel extends React.Component {
+class BicyclePanelView extends React.Component {
 	constructor(props) {
 		super(props)
 		this.refresh = this.refresh.bind(this)
@@ -60,4 +60,4 @@ class BicyclePanel extends React.Component {
 	};
 }
 
-export default BicyclePanel;
+export default BicyclePanelView;
