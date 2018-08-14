@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import bicycleStationsReducer from './bicycleStationsReducer'
+import navigationBarReducer from './navigationBarReducer'
 
 const rootReducer = combineReducers({
-  bicycleStations: bicycleStationsReducer
+  bicycleStations: bicycleStationsReducer,
+  navigationBarSettings: navigationBarReducer
 });
 
 export default rootReducer;

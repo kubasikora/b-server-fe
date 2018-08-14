@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import { Panel } from "react-bootstrap";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "../NavigationBar";
 import TransactionPanel from "../TransactionPanel";
 import LoanerPanel from "../LoanerPanel";
 import LenderPanel from "../LenderPanel";
@@ -22,7 +22,7 @@ class ContentPaneView extends React.Component {
               <Route exact path="/" component={TransactionPanel} />
               <Route exact path="/loaner" component={LoanerPanel} />
               <Route exact path="/lender" component={LenderPanel} />
-              <Redirect to="/" />
+              {/*<Redirect to="/" />*/}
             </Panel.Body>
           </Panel>
         </div>

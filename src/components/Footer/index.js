@@ -4,14 +4,14 @@ const Footer = () => {
   return (
     <footer>
       <hr />
-      <p align="right" style={{ marginRight: "2%" }}>
+      <div align="right" style={{ marginRight: "2%" }}>
         Serwer Piwny DS Riviera <br />
         Credits to:
         <ul style={{ listStyleType: "none" }}>
           <li>Jakub Sikora</li>
           <li>Michał Pestka</li>
         </ul>
-      </p>
+      </div>
     </footer>
   );
 };
