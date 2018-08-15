@@ -15,7 +15,6 @@ const navigationBarReducer = (state = initialState, action) => {
 				...state,
 				loginPopup: false
 			}
-
 		default:
 			return { ...state }
 

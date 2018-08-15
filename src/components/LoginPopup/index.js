@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 import LoginPopupView from './LoginPopupView'
 import hideLoginPopup from '../../actions/ContentPaneActions/hideLoginPopup'
+import logIn from '../../actions/ContentPaneActions/logIn'
 
 const mapStateToProps = state => {
   return {
@@ -9,7 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    hideLoginPopup: () => {dispatch(hideLoginPopup())}
+    hideLoginPopup: () => {dispatch(hideLoginPopup())},
+    logIn : (data) => {dispatch(logIn(data))}
   }
 }
 
